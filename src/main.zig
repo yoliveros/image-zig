@@ -21,7 +21,7 @@ pub fn imgLoader(file_path: []const u8) !bool {
     defer allocator.free(file_content);
 
     var create_img = std.fs.cwd().createFile(
-        "src/test-files/test.txt",
+        "test-files/test.txt",
         .{},
     ) catch unreachable;
     defer create_img.close();
@@ -41,5 +41,5 @@ pub fn imgLoader(file_path: []const u8) !bool {
 }
 
 test "adition test" {
-    try testing.expect(try imgLoader("src/test-files/test.jpg"));
+    try testing.expect(try imgLoader("test-files/test.jpg"));
 }
